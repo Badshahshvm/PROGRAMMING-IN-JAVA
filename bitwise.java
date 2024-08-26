@@ -1,22 +1,20 @@
+import java.util.Scanner;
+
 public class bitwise {
 
-
-    public static void oddOrEven(int n)
+    public static void main(String[] ags)
     {
-        int bit=1;
-        if( (n&bit)==0)
-
+        Scanner x=new Scanner(System.in);
+        int n=x.nextInt();
+        int count=0;
+        while(n>0)
         {
-            System.out.println("number is even ..");
+            if((n & 1)!=0)
+            {
+                count++;
+            }
+            n=n>>1;
         }
-        else {
-            System.out.println("number is odd...");
-        }
-    }
-
-    public static void main(String[] args)
-    {
-     oddOrEven(15);
-     oddOrEven(18);
+        System.out.println(count);
     }
 }

@@ -1,35 +1,37 @@
+import java.util.Scanner;
+
 public class array3 {
+   public static int largest(int number[])
+   {
+       int max=Integer.MIN_VALUE;
+     for(int i=0;i<number.length;i++)
+     {
+         if(max<number[i])
+         {
+             max=number[i];
+         }
+     }
+     return max;
+   }
+   public static int smaller(int number[])
+   {
+       int min=Integer.MAX_VALUE;
+       for(int i=0;i<number.length;i++)
+       {
+           if(min>number[i])
+           {
+               min=number[i];
+           }
+       }
+       return min;
+   }
+   public static void main(String[] args)
+   {
+       Scanner x=new Scanner(System.in);
+       int number[]={56,78,90,99,112};
+       System.out.println( "larger number is " + largest(number));
+       System.out.println("Smaller number is "+ smaller(number));
 
-    public static int largest(int a[])
-    {
-        int largest=Integer.MIN_VALUE; //minus infinite
-        for(int i=0;i<a.length;i++)
-        {
-            if(largest<a[i])
-            {
-                largest=a[i];
-            }
-        }
-        return largest;
-    }
-    public static int smallest(int a[])
-    {
-        int smallest=Integer.MAX_VALUE;
-        for(int i=0;i<a.length;i++)
-        {
-            if(smallest>a[i])
-            {
-                smallest=a[i];
-            }
-        }
-        return smallest;
 
-
-    }
-    public static void main(String[] args)
-    {
-        int a[]={12,35,67,90,111,789};
-        System.out.println("largest element is "+largest(a));
-        System.out.println("smallest elements is "+smallest(a));
-    }
+   }
 }

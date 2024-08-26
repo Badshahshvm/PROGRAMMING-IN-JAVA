@@ -1,28 +1,29 @@
 public class array2 {
-    public static int search(int a[], int key)
+    public static int linearTo(int number[], int key)
     {
-        for(int i=0;i<a.length;i++)
+        for(int i=0;i<number.length;i++)
+
         {
-            if(a[i]==key)
+            if(number[i]==key)
             {
                 return i;
             }
         }
-        return -1;
-    }
 
+            return -1;
+    }
     public static void main(String[] args)
     {
-        int a[]={12,45,67,13,48,67,89,10};
-        int key=7;
-        int index=search(a,key);
-        if(index==-1)
-        {
-            System.out.println("not found....");
+        int number[]={45,8,90,23,14,85,62};
+        int key=8;
+       int index= linearTo(number, key);
+       if(index==-1)
+       {
+           System.out.println("not found");
+       }
+       else{
+           System.out.println("Index is " + index);
+       }
 
-        }
-        else {
-            System.out.println("index is "+ index);
-        }
     }
 }
