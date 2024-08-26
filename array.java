@@ -1,24 +1,27 @@
 public class array {
-
-    public static void update(int marks[], int a)
-    {
-        a=18;
-        for(int i=0;i<marks.length;i++)
-        {
-            marks[i]=marks[i]+5;
-        }
-    }
-
     public static void main(String[] args)
     {
-        int marks[]={12,45,67,89};
-        int a=19;
+        int [] marks={57,89,67,54,34};
 
-        update(marks,a);
-        for(int i=0;i<marks.length;i++)
+        System.out.println(marks[4]);
+        System.out.println(marks.length);
+        char [] ch = {'a','e','o','i','u'};
+        System.out.println(ch.length);
+        System.out.println(ch[3]);
+        String[] students={"Shivam","Bigboss","Vikash","Anuraag"};
+        System.out.println(students.length);
+        System.out.println(students[2]);
+        for(String element:students)
         {
-            System.out.print(marks[i]+" ");
-            System.out.println(a);
+            System.out.println(element);
+        }
+        for(int element:marks)
+        {
+            System.out.println(element);
+        }
+        for(char element:ch)
+        {
+            System.out.println(element);
         }
 
     }

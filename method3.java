@@ -1,21 +1,16 @@
-import java.util.Scanner;
-
 public class method3 {
-    public static int printFact(int n)
+    static void change(int [] arr)
     {
-        Scanner x=new Scanner(System.in);
-
-        int fact=1;
-        for(int i=1;i<=n;i++)
-        {
-            fact=fact*i;
-        }
-        return fact;
+        arr[2]=76;
+        arr[0]=1;
     }
     public static void main(String[] args)
     {
-        System.out.println( printFact(15));
-        System.out.println( printFact(5));
-
+        int [] marks={34,67,89,45};
+        change(marks);
+        System.out.println("the value after changing in array:"+marks[2]);
+        change(marks);
+        System.out.println("the value after changing in array:"+marks[0]);
+        System.out.println(marks.length);
     }
 }
