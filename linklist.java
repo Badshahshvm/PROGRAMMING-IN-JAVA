@@ -1,5 +1,9 @@
+import java.util.LinkedList;
+import java.util.Scanner;
+
 public class linklist {
     static class Node
+
     {
         int data;
         Node next;
@@ -9,112 +13,50 @@ public class linklist {
             this.next=null;
         }
     }
-    public static Node head;
-    public static Node tail;
-    public  void addFirst(int data)
+    Node head=null;
+    public void creation()
     {
-        Node newNode=new Node(data);
-        if(head==null)
-        {
-            head=tail=newNode;
-            return;
-        }
-        newNode.next=head;
-        head=newNode;
-    }
-    public int search(int key)
-    {
-        Node temp=head;
-        int i=0;
-        while(temp!=null)
-        {
-            if(temp.data==key)
-            {
-                return i;
+                Scanner x=new Scanner(System.in);
+                int data,n;
+                do {
+                System.out.println("enter the value:");
+                data=x.nextInt();
+                Node n1=new Node(data);
+                if(head==null)
+                {
+                    head=n1;
+                }
+                else {
+                    n1.next=head;
+                    head=n1;
+                }
+                System.out.println("if you wan to add more data..the press 1...");
+                n=x.nextInt();
             }
-            temp=temp.next;
-            i++;
+        while(n==1);
         }
-        return -1;
-    }
-    public  void disPlay()
-    {
-        Node temp=head;
-        if(head==null)
+        public void traverser()
         {
-            System.out.print("empty"+" ");
-            return;
+            Node temp=head;
+            if(head==null)
+            {
+                System.out.println("does not exist:");
+            }
+            else {
+                while(temp != null)
+                {
+                    System.out.print(temp.data +" ");
+                    temp=temp.next;
+                }
+            }
         }
-        while(temp!=null)
-        {
-            System.out.print(temp.data+"->");
-            temp=temp.next;
-        }
-    }
-    public int delete(int n)
-    {
-        if(head==null)
-        {
-            return -1;
-        }
-        if(n==1){
-            int val=head.data;
-            head=tail=null;
-            return val;
-        }
-        int val=head.data;
-        head=head.next;
-        return val;
 
-    }
-    public void reverse()
-    {
-        Node prev=null;
-        Node curr=head;
-        Node next;
-        while(curr!=null)
-        {
-            next=curr.next;
-            curr.next=prev;
-            prev=curr;
-            curr=next;
-        }
-        head=prev;
-    }
-    public int nthNode(int n)
-    {
-        int s=0;
-        Node temp=head;
-        while(temp!=null)
-        {
-            s++;
-            temp=temp.next;
-
-        }
-        temp=head;
-        int a=(s-n+1);
-        for(int i=1;i<=a-1;i++)
-        {
-            temp=temp.next;
-        }
-        return temp.data;
-    }
     public static void main(String[] args)
     {
-        linklist list=new linklist();
-        list.addFirst(40);
-        list.addFirst(56);
-        list.addFirst(67);
-        list.addFirst(44);
-        list.addFirst(89);
-        System.out.println();
-        list.disPlay();
-        System.out.println();
-        System.out.println(list.search(40));
-        System.out.println();
-        list.reverse();
-        list.disPlay();
-        System.out.println();
-        System.out.println(list.nthNode(2));
+        linklist first=new linklist();
+        first.creation();
+        first.traverser();
     }
-}
+
+    }
+
