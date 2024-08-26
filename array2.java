@@ -1,29 +1,13 @@
 public class array2 {
-    public static int linearTo(int number[], int key)
-    {
-        for(int i=0;i<number.length;i++)
-
+    public static void main(String[] args) {
+        float marks []={43.56f,56.67f,54.67f,43.89f,87.67f};
+        int i;
+        float sum=0;
+        System.out.println(marks.length);
+        for(i=0;i<marks.length;i++)
         {
-            if(number[i]==key)
-            {
-                return i;
-            }
+            sum=sum+marks[i];
         }
-
-            return -1;
-    }
-    public static void main(String[] args)
-    {
-        int number[]={45,8,90,23,14,85,62};
-        int key=8;
-       int index= linearTo(number, key);
-       if(index==-1)
-       {
-           System.out.println("not found");
-       }
-       else{
-           System.out.println("Index is " + index);
-       }
-
+        System.out.printf("%.2f",sum);
     }
 }

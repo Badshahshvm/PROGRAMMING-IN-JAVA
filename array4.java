@@ -1,32 +1,15 @@
 public class array4 {
-    public static int binarySearh(int number[], int key)
-    {
-        int start=0, end=number.length-1;
-        while(start<=end)
+    public static void main(String[] args) {
+        int marks[]={28,34,42,21,43};
+        int i,l;
+        l=marks[0];
+        for(i=0;i<marks.length;i++)
         {
-            int mid=(start+end)/2;
-            if(number[mid]==key)
+            if(l<marks[i])
             {
-                return mid;
+                l=marks[i];
             }
-            if(number[mid]<key)
-            {
-                start=mid+1;
-            }
-            else {
-                end=mid-1;
-            }
-
         }
-        return-1;
-
-    }
-    public static void main(String[] args)
-    {
-        int number[]={67,89,14,34,65,18,19,10,45,43,41};
-        int key=19;
-        System.out.println(binarySearh(number, key));
-
-
+        System.out.printf("%d",l);
     }
 }

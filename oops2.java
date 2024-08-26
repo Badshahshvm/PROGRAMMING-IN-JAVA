@@ -1,33 +1,17 @@
- class oops2 {
-    public static void main(String[] args)
+class cellphone{
+    public void ringing()
     {
-            Fruits f1=new Fruits();
-            f1.name="Apple";
-        System.out.println(f1.getName());
-        f1.price=15;
-        System.out.println(f1.getPrice());
-        f1.name="banana";
-        System.out.println(f1.getName());
+        System.out.println("ringging....");
+    }
+    public void vibrating()
+    {
+        System.out.println("vibrating...");
     }
 }
-class Fruits
-{
-    String name;
-    int price;
-    void setName(String newName)
-    {
-        this.name=newName;
-    }
-    void setPrice(int price)
-    {
-        this.price=price;
-    }
-    String getName()
-    {
-        return this.name;
-    }
-    int getPrice()
-    {
-        return this.price;
+public class oops2 {
+    public static void main(String[] args) {
+        cellphone vikash=new cellphone();
+        vikash.ringing();
+        vikash.vibrating();
     }
 }

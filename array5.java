@@ -1,25 +1,25 @@
 public class array5 {
-    public static void reverse(int n[])
-    {
-        int first=0, last=n.length-1;
-        while(first<last)
+    public static void main(String[] args) {
+        int marks[]={57,45,67,23,98};
+        int t,i,j;
+        System.out.println(marks.length);
+        //l=marks[0];
+        for(i=0;i<5;i++)
         {
-            int temp=n[last];
-            n[last]=n[first];
-            n[first]=temp;
-            first++;
-            last--;
-        }
+            for(j=0;j<4;j++)
+            {
+                if (marks[j] > marks[j+1])
+                {
+                    t=marks[j];
+                    marks[j]=marks[j+1];
+                    marks[j+1]=t;
+                    //System.out.printf("%d\t",marks[i]);
+                }
 
-    }
-    public static void main(String[] args)
-    {
-        int n[]={12,13,14,15,16,17,18,22};
-        reverse(n);
-        for(int i=0;i<n.length;i++)
-        {
-            System.out.print(n[i] +" ");
-        }
+            }
 
-    }
+        }
+        for(i=0;i<5;i++) {
+            System.out.printf("%d\t", marks[i]);
+        }    }
 }
