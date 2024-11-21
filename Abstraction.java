@@ -6,7 +6,7 @@ abstract class Parent
     }
     void child()
     {
-        System.out.println("My parents are very protective....");
+        System.out.println("My parents are very protective............");
     }
     abstract void care();
 }
