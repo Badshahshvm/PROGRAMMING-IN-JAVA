@@ -1,7 +1,7 @@
 abstract class Parent
 {
     Parent()
-    {
+    
 
     }
     void child()
