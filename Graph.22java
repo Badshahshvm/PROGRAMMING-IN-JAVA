@@ -1,0 +1,60 @@
+public class GraphCreate {
+    int[][] a;
+
+    GraphCreate(int nodes) {
+        a = new int[nodes][nodes];
+    }
+
+    public void addEdges(int[][] arr, boolean isDirected) {
+        for (int[] edge : arr) {
+            int u = edge[0];
+            int v = edge[1];
+            if (isDirected) {
+                a[u][v] = 1;
+            } else {
+                a[u][v] = 1;
+                a[v][u] = 1;
+            }
+        }
+    }
+
+    public void printGraph() {
+        for (int[] row : a) {
+            for (int val : row) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printDegree(int[][] arr, boolean isDirected) {
+        int[] degree = new int[arr.length + 1]; // assuming 0-based indexing
+
+        for (int[] edge : arr) {
+            int u = edge[0];
+            int v = edge[1];
+            if (isDirected) {
+                // in-degree for v
+                degree[v]++;
+            } else {
+                degree[u]++;
+                degree[v]++;
+            }
+        }
+
+        System.out.println("Node : Degree");
+        for (int i = 0; i < degree.length; i++) {
+            System.out.println(i + " : " + degree[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[][] a = { {0, 1}, {0, 2}, {1, 2} };
+        GraphCreate g = new GraphCreate(3);
+        g.addEdges(a, false); // false = undirected
+        g.printGraph();
+
+        System.out.println();
+        GraphCreate.printDegree(a, false); // fixed method call
+    }
+}
